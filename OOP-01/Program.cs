@@ -37,7 +37,83 @@ namespace OOP_01
 
             #region Practical Questions
 
+            #region  Print all shipment information from user
+
+            // a create object from delivery center
+            DeliveryCenter center = new DeliveryCenter();
+
+            // b, c. Read and add three shipments
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"========== Shipment {i + 1} ==========");
+
+                Console.Write("Tracking Code: ");
+                string trackingCode = Console.ReadLine();
+
+                Console.Write("Description: ");
+                string description = Console.ReadLine();
+
+                Console.Write("Weight: ");
+                double weight = double.Parse(Console.ReadLine());
+
+                Console.Write("Delivery Fee: ");
+                decimal deliveryFee = decimal.Parse(Console.ReadLine());
+
+                Console.Write("City: ");
+                string city = Console.ReadLine();
+
+                Console.Write("Street: ");
+                string street = Console.ReadLine();
+
+                Console.Write("Building Number: ");
+                int buildingNumber = int.Parse(Console.ReadLine());
+
+                DeliveryAddress destination =
+                    new DeliveryAddress(city, street, buildingNumber);
+
+                Shipment shipment = new Shipment(
+                    trackingCode,
+                    description,
+                    weight,
+                    deliveryFee,
+                    destination);
+
+                center.AddShipment(shipment);
+
+
+
+            }
+            // d. Print the three shipments using the integer indexer
+            Console.WriteLine("\n========== All Shipments ==========");
+
+            for (int i = 0; i < 3; i++)
+            {
+                center[i].PrintShipment();
+                Console.WriteLine();
+            }
+
+            // e. Ask for tracking code
+            Console.Write("Enter Tracking Code to search: ");
+            string searchCode = Console.ReadLine();
+
+            // f. Search using string indexer
+            Shipment foundShipment = center[searchCode];
+
+            // g. Print if found
+            if (!string.IsNullOrWhiteSpace(foundShipment.TrackingCode))
+            {
+                Console.WriteLine($"Found {foundShipment.TrackingCode} - {foundShipment.Description}");
+
+            }
+            else
+            {
+                Console.WriteLine("Shipment not found.");
+            }
+
+
             #region (Q1) Struct copy test
+
+            Console.WriteLine("-------------Struct copy test-------------");
 
             DeliveryAddress Address = new DeliveryAddress("Cairo", "Maadi", 1);
             DeliveryAddress CopiedAddress = Address;
@@ -58,7 +134,13 @@ namespace OOP_01
 
             #endregion
 
+
+
             #endregion
+
+
+            #endregion
+
 
 
 
