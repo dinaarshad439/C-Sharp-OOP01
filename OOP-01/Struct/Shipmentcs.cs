@@ -6,7 +6,7 @@ namespace OOP_01.Struct
     /// Represents a shipment with tracking, delivery, destination, and cost information.
     /// </summary>
 
-    internal class Shipment
+    internal struct Shipment
     {
         #region Private Fields
 

@@ -6,21 +6,25 @@ namespace OOP_01.Struct
     /// Represents a delivery address with city, street, and building number.
     /// </summary>
 
-    internal class DeliveryAddress
+    internal struct DeliveryAddress
     {
-        //fields
+        #region fields
         public string City;
         public string Street;
         public int BuildingNumber;
 
-        // Constructor
+        #endregion
+
+        #region Constructor
         public DeliveryAddress(string city, string street, int buildingNumber)
         {
             City = city;
             Street = street;
             BuildingNumber = buildingNumber;
         }
+        #endregion
 
+        #region Method
         /// <summary>
         /// method gets the full address 
         /// </summary>
@@ -29,6 +33,8 @@ namespace OOP_01.Struct
         {
             return $"{City}, {Street}, {BuildingNumber}";
         }
+
+        #endregion
     }
 
 }
