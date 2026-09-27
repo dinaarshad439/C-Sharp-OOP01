@@ -6,7 +6,7 @@ namespace OOP_01.Struct
     /// Represents a shipment with tracking, delivery, destination, and cost information.
     /// </summary>
 
-    internal class Shipmentcs
+    internal class Shipment
     {
         #region Private Fields
 
@@ -73,5 +73,25 @@ namespace OOP_01.Struct
 
         #endregion
 
+        #region Constructor
+        public Shipment(string _trackingCode)
+        {
+            TrackingCode = _trackingCode;
+            Description = "Unknown";
+            Weight = 1;
+            DeliveryFee = 50;
+            Destination = default;
+        }
+
+        public Shipment(string _trackingCode, string _description, double _weight, decimal _deliveryFee, DeliveryAddress _destination)
+        {
+            TrackingCode = _trackingCode;
+            Description = _description;
+            Weight = _weight;
+            DeliveryFee = _deliveryFee;
+            Destination = _destination;
+        }
+
+        #endregion
     }
 }
