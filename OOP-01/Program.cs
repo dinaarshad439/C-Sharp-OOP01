@@ -1,5 +1,7 @@
 ﻿
 
+using OOP_01.Struct;
+
 namespace OOP_01
 {
     internal class Program
@@ -31,7 +33,30 @@ namespace OOP_01
              */
             #endregion
 
+            #endregion
 
+            #region Practical Questions
+
+            #region (Q1) Struct copy test
+
+            DeliveryAddress Address = new DeliveryAddress("Cairo", "Maadi", 1);
+            DeliveryAddress CopiedAddress = Address;
+
+            Console.WriteLine("==========Before modifying copied variable==============");
+
+            Console.WriteLine($"Copied variable : {CopiedAddress.GetFullAddress()}");
+            Console.WriteLine($"Original variable: {Address.GetFullAddress()}");
+
+            CopiedAddress.BuildingNumber = 2;
+            CopiedAddress.Street = "Nasr City";
+            Console.WriteLine("==========After modifying copied variable==============");
+
+            Console.WriteLine($"Copied address : {CopiedAddress.GetFullAddress()}");
+            Console.WriteLine($"Original address: {Address.GetFullAddress()}");
+
+
+
+            #endregion
 
             #endregion
 
