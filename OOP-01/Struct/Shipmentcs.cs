@@ -93,5 +93,25 @@ namespace OOP_01.Struct
         }
 
         #endregion
+
+        #region Methods
+        public void UpdateDeliveryFee(decimal newFee)
+        {
+            if (newFee > 0)
+                DeliveryFee = newFee;
+        }
+
+        public void PrintShipment()
+        {
+            Console.WriteLine($"Tracking Code: {TrackingCode}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Weight: {Weight}");
+            Console.WriteLine($"Delivery Fee: {DeliveryFee}");
+            Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
+            Console.WriteLine($"Estimated Cost: {EstimatedCost}");
+
+        }
+
+        #endregion
     }
 }
